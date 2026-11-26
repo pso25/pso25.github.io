@@ -3,184 +3,403 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Praveen PS | Site Reliability Engineer · DevOps</title>
-  <meta name="description" content="Praveen PS – Site Reliability Engineer and DevOps engineer with 4+ years running production systems on AWS, Azure and Kubernetes.">
+  <title>Praveen PS · Site Reliability Engineer · DevOps</title>
+  <meta name="description" content="Praveen PS: Site Reliability Engineer and DevOps engineer with 4+ years running production systems on AWS, Azure and Kubernetes. Based in Dublin.">
+  <meta property="og:title" content="Praveen PS · Site Reliability Engineer · DevOps">
+  <meta property="og:description" content="4+ years running production systems on AWS, Azure and Kubernetes. MSc DevOps at TU Dublin.">
+  <meta property="og:url" content="https://pso25.github.io">
+  <meta name="theme-color" content="#0a0e14">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%230a0e14'/><text x='50' y='66' font-family='monospace' font-size='46' font-weight='bold' fill='%2334d399' text-anchor='middle'>ps</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
-    :root { --bg:#0f172a; --card:#1e293b; --text:#e2e8f0; --muted:#94a3b8; --accent:#38bdf8; --border:#334155; }
+    :root {
+      --bg: #0a0e14;
+      --bg-2: #0f141c;
+      --card: #121924;
+      --card-hover: #16202e;
+      --border: #1f2a3a;
+      --border-2: #2b3a50;
+      --text: #e6edf3;
+      --muted: #8b98a9;
+      --dim: #5c6b7f;
+      --green: #34d399;
+      --green-bg: rgba(52, 211, 153, 0.1);
+      --blue: #60a5fa;
+      --blue-bg: rgba(96, 165, 250, 0.1);
+      --amber: #fbbf24;
+      --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin:0; font-family: "Segoe UI", Arial, sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
-    .wrap { max-width: 920px; margin: 0 auto; padding: 0 20px; }
-    nav { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; padding:20px 0; border-bottom:1px solid var(--border); }
-    nav .logo { font-weight:bold; font-size:18px; }
-    nav a { color:var(--muted); text-decoration:none; margin-left:16px; font-size:14px; }
-    nav a:hover { color:var(--accent); }
-    header { padding:60px 0 36px; }
-    header .eyebrow { color:var(--accent); font-size:14px; letter-spacing:1px; text-transform:uppercase; margin:0 0 8px; }
-    header h1 { font-size:42px; margin:0 0 10px; line-height:1.2; }
-    header p { color:var(--muted); font-size:18px; max-width:680px; margin:0 0 14px; }
-    .avail { display:inline-block; background:#0b3b2e; color:#6ee7b7; font-size:13px; padding:5px 12px; border-radius:20px; margin-bottom:22px; }
-    .btn { display:inline-block; padding:10px 18px; border:1px solid var(--accent); color:var(--accent); border-radius:6px; text-decoration:none; margin:0 10px 10px 0; font-size:14px; }
-    .btn.primary { background:var(--accent); color:var(--bg); }
-    .stats { display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:14px; margin-top:20px; }
-    .stat { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:14px 16px; }
-    .stat b { display:block; font-size:22px; color:var(--accent); }
-    .stat span { font-size:13px; color:var(--muted); }
-    section { padding:30px 0; }
-    h2 { font-size:24px; border-left:4px solid var(--accent); padding-left:12px; margin-bottom:20px; }
-    .job { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:20px; margin-bottom:16px; }
-    .job-head { display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px; }
-    .job h3 { margin:0; font-size:18px; }
-    .job .org { color:var(--accent); font-size:15px; }
-    .job .date { color:var(--muted); font-size:14px; }
-    .job .note { color:var(--muted); font-size:13px; margin:4px 0 0; font-style:italic; }
-    .job ul { margin:12px 0 0; padding-left:20px; color:#cbd5e1; font-size:15px; }
-    .job li { margin-bottom:6px; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px; }
-    .card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:20px; }
-    .card h3 { margin:0 0 4px; font-size:17px; }
-    .card .sub { color:var(--muted); font-size:13px; margin:0 0 10px; }
-    .card ul { margin:0 0 12px; padding-left:20px; color:#cbd5e1; font-size:14px; }
-    .card li { margin-bottom:5px; }
-    .tags span { display:inline-block; background:#0b3b52; color:#7dd3fc; font-size:12px; padding:3px 10px; border-radius:20px; margin:0 6px 6px 0; }
-    .skills { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px; }
-    .skills .card h3 { font-size:15px; color:var(--muted); font-weight:normal; margin-bottom:10px; }
-    .list { list-style:none; padding:0; margin:0; }
-    .list li { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:14px 18px; margin-bottom:10px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px; }
-    .list li span { color:var(--muted); font-size:14px; }
-    footer { border-top:1px solid var(--border); margin-top:30px; padding:28px 0 44px; color:var(--muted); font-size:14px; }
-    footer h2 { color:var(--text); }
-    footer a { color:var(--accent); text-decoration:none; margin-right:18px; }
-    @media (max-width:600px) { header h1 { font-size:32px; } nav a { margin-left:0; margin-right:14px; } }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text); font-family: var(--sans);
+      line-height: 1.65; -webkit-font-smoothing: antialiased;
+      background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.035) 1px, transparent 0);
+      background-size: 28px 28px;
+    }
+    a { color: inherit; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+    .mono { font-family: var(--mono); }
+
+    nav {
+      position: sticky; top: 0; z-index: 10; background: rgba(10, 14, 20, 0.82);
+      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--border);
+    }
+    nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .logo { font-family: var(--mono); font-weight: 700; font-size: 15px; text-decoration: none; }
+    .logo span { color: var(--green); }
+    .nav-links { display: flex; gap: 26px; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color .2s; }
+    .nav-links a:hover { color: var(--text); }
+
+    .hero { display: grid; grid-template-columns: 1.25fr 1fr; gap: 48px; align-items: center; padding: 88px 0 64px; }
+    .status-pill {
+      display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 12.5px;
+      color: var(--green); background: var(--green-bg); border: 1px solid rgba(52,211,153,0.25);
+      padding: 6px 12px; border-radius: 999px; margin-bottom: 22px;
+    }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 0 rgba(52,211,153,.6); animation: pulse 2s infinite; }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(52,211,153,.55); } 70% { box-shadow: 0 0 0 10px rgba(52,211,153,0); } 100% { box-shadow: 0 0 0 0 rgba(52,211,153,0); } }
+    .hero h1 { font-size: clamp(36px, 5.4vw, 58px); line-height: 1.08; letter-spacing: -0.03em; margin: 0 0 18px; font-weight: 700; }
+    .hero h1 .accent { color: var(--green); }
+    .hero .lead { font-size: 18px; color: var(--muted); max-width: 560px; margin: 0 0 28px; }
+    .hero .lead strong { color: var(--text); font-weight: 500; }
+    .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 8px; font-size: 14px;
+      font-weight: 500; text-decoration: none; border: 1px solid var(--border-2); color: var(--text); transition: all .2s;
+    }
+    .btn:hover { border-color: var(--muted); transform: translateY(-1px); }
+    .btn.primary { background: var(--green); color: #04110b; border-color: var(--green); }
+    .btn.primary:hover { background: #4ade80; border-color: #4ade80; }
+    .btn svg { width: 16px; height: 16px; }
+
+    .terminal { background: var(--bg-2); border: 1px solid var(--border-2); border-radius: 12px; overflow: hidden; font-family: var(--mono); font-size: 13px; box-shadow: 0 24px 60px -20px rgba(0,0,0,.6); }
+    .term-bar { display: flex; align-items: center; gap: 7px; padding: 11px 14px; border-bottom: 1px solid var(--border); background: #0c1118; }
+    .term-bar i { width: 11px; height: 11px; border-radius: 50%; background: #2b3545; display: block; }
+    .term-bar span { margin-left: 8px; color: var(--dim); font-size: 12px; }
+    .term-body { padding: 18px 18px 20px; line-height: 1.85; }
+    .term-body .p { color: var(--green); }
+    .term-body .c { color: var(--text); }
+    .term-body .k { color: var(--muted); display: inline-block; min-width: 108px; }
+    .term-body .v { color: var(--blue); }
+    .term-body .ok { color: var(--green); }
+    .cursor { display: inline-block; width: 8px; height: 15px; background: var(--green); vertical-align: -2px; animation: blink 1.1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .metrics { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--border); border-radius: 12px; background: var(--card); overflow: hidden; margin-bottom: 24px; }
+    .metric { padding: 22px 24px; border-right: 1px solid var(--border); }
+    .metric:last-child { border-right: none; }
+    .metric .label { font-family: var(--mono); font-size: 11.5px; color: var(--dim); text-transform: uppercase; letter-spacing: .08em; }
+    .metric .value { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; margin-top: 4px; }
+    .metric .sub { font-size: 13px; color: var(--muted); }
+
+    section { padding: 72px 0 8px; }
+    .section-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 30px; }
+    .section-head .num { font-family: var(--mono); color: var(--green); font-size: 14px; }
+    .section-head h2 { margin: 0; font-size: 28px; letter-spacing: -0.02em; }
+    .section-head .line { flex: 1; height: 1px; background: var(--border); }
+
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before { content: ""; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 1px; background: var(--border-2); }
+    .job { position: relative; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px 26px; margin-bottom: 20px; transition: border-color .2s, background .2s; }
+    .job:hover { border-color: var(--border-2); background: var(--card-hover); }
+    .job::before { content: ""; position: absolute; left: -27px; top: 30px; width: 11px; height: 11px; border-radius: 50%; background: var(--bg); border: 2px solid var(--green); }
+    .job-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 6px 16px; }
+    .job h3 { margin: 0; font-size: 19px; letter-spacing: -0.01em; }
+    .job .org { color: var(--green); font-weight: 500; font-size: 15px; }
+    .job .date { font-family: var(--mono); font-size: 12.5px; color: var(--muted); background: var(--bg-2); border: 1px solid var(--border); padding: 4px 10px; border-radius: 6px; height: fit-content; }
+    .path { font-family: var(--mono); font-size: 12.5px; color: var(--dim); margin-top: 8px; }
+    .path b { color: var(--muted); font-weight: 400; }
+    .job ul { margin: 16px 0 0; padding: 0; list-style: none; }
+    .job li { position: relative; padding-left: 20px; margin-bottom: 9px; color: #c3cdd9; font-size: 15px; }
+    .job li::before { content: "›"; position: absolute; left: 4px; color: var(--green); font-family: var(--mono); font-weight: 700; }
+    .job .stack { margin-top: 16px; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .tag { font-family: var(--mono); font-size: 12px; color: var(--blue); background: var(--blue-bg); border: 1px solid rgba(96,165,250,0.18); padding: 3px 10px; border-radius: 6px; }
+
+    .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .project { display: flex; flex-direction: column; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 26px; transition: transform .2s, border-color .2s; }
+    .project:hover { transform: translateY(-3px); border-color: var(--border-2); }
+    .project.featured { grid-column: 1 / -1; }
+    .project .kicker { font-family: var(--mono); font-size: 11.5px; color: var(--amber); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px; }
+    .project h3 { margin: 0 0 6px; font-size: 21px; letter-spacing: -0.01em; }
+    .project .context { color: var(--muted); font-size: 14px; margin: 0 0 18px; }
+    .pipeline { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; font-family: var(--mono); font-size: 12.5px; margin: 4px 0 20px; padding: 14px 16px; background: var(--bg-2); border: 1px dashed var(--border-2); border-radius: 10px; }
+    .stage { padding: 5px 11px; border-radius: 6px; border: 1px solid var(--border-2); color: var(--text); }
+    .stage.gate { color: var(--amber); border-color: rgba(251,191,36,0.35); }
+    .stage.prod { color: var(--green); border-color: rgba(52,211,153,0.4); background: var(--green-bg); }
+    .arrow { color: var(--dim); }
+    .project ul { margin: 0 0 20px; padding: 0; list-style: none; flex: 1; }
+    .project li { position: relative; padding-left: 20px; margin-bottom: 9px; color: #c3cdd9; font-size: 15px; }
+    .project li::before { content: "›"; position: absolute; left: 4px; color: var(--green); font-family: var(--mono); font-weight: 700; }
+    .feature-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 28px; }
+
+    .skills { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+    .skill { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; }
+    .skill h3 { margin: 0 0 12px; font-family: var(--mono); font-size: 13px; color: var(--muted); font-weight: 500; }
+    .skill h3::before { content: "# "; color: var(--green); }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .item { display: flex; gap: 16px; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; margin-bottom: 14px; }
+    .item .icon { flex-shrink: 0; width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; background: var(--green-bg); color: var(--green); }
+    .item .icon svg { width: 20px; height: 20px; }
+    .item h4 { margin: 0 0 2px; font-size: 15.5px; }
+    .item p { margin: 0; color: var(--muted); font-size: 14px; }
+    .item .when { font-family: var(--mono); font-size: 12px; color: var(--dim); margin-top: 4px; }
+
+    .contact { margin: 80px 0 0; padding: 48px; border: 1px solid var(--border-2); border-radius: 16px; background: linear-gradient(135deg, rgba(52,211,153,0.08), rgba(96,165,250,0.06)); text-align: center; }
+    .contact h2 { font-size: 32px; letter-spacing: -0.02em; margin: 0 0 10px; }
+    .contact p { color: var(--muted); max-width: 560px; margin: 0 auto 26px; }
+    .contact .ctas { justify-content: center; }
+
+    footer { padding: 36px 0 48px; color: var(--dim); font-family: var(--mono); font-size: 12.5px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .dot, .cursor { animation: none; } html { scroll-behavior: auto; } }
+
+    @media (max-width: 880px) {
+      .hero { grid-template-columns: 1fr; padding-top: 56px; gap: 36px; }
+      .metrics { grid-template-columns: 1fr 1fr; }
+      .metric:nth-child(2) { border-right: none; }
+      .metric:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
+      .projects, .feature-grid, .two-col { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .contact { padding: 34px 22px; }
+    }
+    @media (max-width: 480px) {
+      .metrics { grid-template-columns: 1fr; }
+      .metric { border-right: none !important; border-bottom: 1px solid var(--border); }
+      .metric:last-child { border-bottom: none; }
+      .job, .project { padding: 20px; }
+      .term-body .k { min-width: 92px; }
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <nav>
-      <div class="logo">Praveen PS</div>
-      <div>
+  <nav>
+    <div class="wrap">
+      <a class="logo" href="#top"><span>~/</span>praveen-ps</a>
+      <div class="nav-links">
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <header>
-      <p class="eyebrow">Site Reliability Engineer · DevOps</p>
-      <h1>Hi, I'm Praveen.<br>I keep production systems reliable.</h1>
-      <p>DevOps and Site Reliability Engineer with 4+ years running production systems on AWS, Azure and Kubernetes, most recently on Walmart's e-commerce platform. Now pursuing an MSc in Computing (DevOps) at TU Dublin.</p>
-      <div class="avail">● Available for part-time and internship roles now · full-time from September 2027</div><br>
-      <a class="btn primary" href="mailto:praveenps025@gmail.com">Email me</a>
-      <a class="btn" href="https://linkedin.com/in/praveen-ps">LinkedIn</a>
-      <a class="btn" href="https://github.com/pso25">GitHub</a>
-      <div class="stats">
-        <div class="stat"><b>4+ years</b><span>in DevOps and SRE</span></div>
-        <div class="stat"><b>24×7</b><span>on-call at Walmart Global Tech</span></div>
-        <div class="stat"><b>AWS + Azure</b><span>multi-cloud production</span></div>
-        <div class="stat"><b>3 promotions</b><span>at Wall Street English</span></div>
+  <main class="wrap" id="top">
+    <div class="hero">
+      <div>
+        <div class="status-pill"><span class="dot"></span>Open to part-time and internship roles · Dublin</div>
+        <h1>Praveen PS.<br>I keep production <span class="accent">up</span>.</h1>
+        <p class="lead">Site Reliability Engineer with <strong>4+ years</strong> running production systems on <strong>AWS, Azure and Kubernetes</strong>, most recently on-call for <strong>Walmart's e-commerce platform</strong>. Now doing an MSc in DevOps at TU Dublin.</p>
+        <div class="ctas">
+          <a class="btn primary" href="mailto:praveenps025@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            Get in touch
+          </a>
+          <a class="btn" href="https://linkedin.com/in/praveen-ps" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+            LinkedIn
+          </a>
+          <a class="btn" href="https://github.com/pso25" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>
+            GitHub
+          </a>
+        </div>
       </div>
-    </header>
+
+      <div class="terminal" aria-label="Profile summary in a terminal">
+        <div class="term-bar"><i></i><i></i><i></i><span>praveen@prod: ~</span></div>
+        <div class="term-body">
+          <div><span class="p">$</span> <span class="c">kubectl describe engineer praveen-ps</span></div>
+          <div><span class="k">Role:</span><span class="v">SRE / DevOps</span></div>
+          <div><span class="k">Experience:</span><span class="v">4+ years</span></div>
+          <div><span class="k">Clouds:</span><span class="v">AWS, Azure</span></div>
+          <div><span class="k">On-call:</span><span class="v">24×7 production</span></div>
+          <div><span class="k">Certified:</span><span class="v">AWS SA Associate</span></div>
+          <div><span class="k">Studying:</span><span class="v">MSc DevOps, TU Dublin</span></div>
+          <div><span class="k">Status:</span><span class="ok">● Ready</span></div>
+          <div><span class="p">$</span> <span class="cursor"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="metrics reveal">
+      <div class="metric"><div class="label">Experience</div><div class="value">4+ yrs</div><div class="sub">DevOps and SRE</div></div>
+      <div class="metric"><div class="label">On-call</div><div class="value">24×7</div><div class="sub">Walmart Global Tech</div></div>
+      <div class="metric"><div class="label">Cloud</div><div class="value">AWS + Azure</div><div class="sub">multi-cloud production</div></div>
+      <div class="metric"><div class="label">Certified</div><div class="value">AWS SAA</div><div class="sub">Solutions Architect</div></div>
+    </div>
 
     <section id="experience">
-      <h2>Experience</h2>
-
-      <div class="job">
-        <div class="job-head">
-          <div><h3>Site Reliability Engineer</h3><div class="org">Walmart Global Tech</div></div>
-          <div class="date">Sep 2024 – Jul 2026</div>
+      <div class="section-head reveal"><span class="num">01</span><h2>Experience</h2><span class="line"></span></div>
+      <div class="timeline">
+        <div class="job reveal">
+          <div class="job-head">
+            <div><h3>Site Reliability Engineer</h3><div class="org">Walmart Global Tech</div></div>
+            <div class="date">Sep 2024 – Jul 2026</div>
+          </div>
+          <ul>
+            <li>Operated customer-facing e-commerce services on Kubernetes (Walmart's WCNP) and SaaS apps on Azure.</li>
+            <li>Handled 24×7 on-call, triaging production incidents and working major incidents through to resolution.</li>
+            <li>Debugged production Kubernetes workloads with kubectl: crash-looping pods, failed rollouts and resource limits.</li>
+            <li>Reworked Grafana alerting into metric-based rules, reducing noisy pages and speeding up on-call response.</li>
+            <li>Centralised application logs in OpenObserve, giving on-call one place to search and correlate logs.</li>
+            <li>Diagnosed latency and performance bottlenecks across distributed services from metrics and logs.</li>
+          </ul>
+          <div class="tags stack"><span class="tag">Kubernetes</span><span class="tag">Azure</span><span class="tag">Grafana</span><span class="tag">OpenObserve</span><span class="tag">Incident response</span></div>
         </div>
-        <ul>
-          <li>Operated customer-facing e-commerce services on Kubernetes (Walmart's WCNP) and SaaS apps on Azure.</li>
-          <li>Debugged production Kubernetes workloads with kubectl: crash-looping pods, failed rollouts and resource limits.</li>
-          <li>Handled 24×7 on-call, triaging production incidents and working major incidents through to resolution.</li>
-          <li>Reworked Grafana alerting into metric-based rules, reducing noisy pages and speeding up on-call response.</li>
-          <li>Centralised application logs in OpenObserve, giving on-call one place to search and correlate logs.</li>
-          <li>Diagnosed latency and performance bottlenecks across distributed services from metrics and logs.</li>
-        </ul>
-      </div>
 
-      <div class="job">
-        <div class="job-head">
-          <div><h3>DevOps &amp; Site Reliability Engineer</h3><div class="org">Wall Street English</div></div>
-          <div class="date">Sep 2021 – Aug 2024</div>
+        <div class="job reveal">
+          <div class="job-head">
+            <div><h3>DevOps &amp; Site Reliability Engineer</h3><div class="org">Wall Street English</div></div>
+            <div class="date">Sep 2021 – Aug 2024</div>
+          </div>
+          <div class="path"><b>Cloud Engineer</b> → <b>DevOps Engineer</b> → <b>DevOps &amp; DBA</b> → <b>DevOps &amp; SRE</b></div>
+          <ul>
+            <li>Designed and ran highly available AWS and Azure infrastructure for the EdTech platform and customer apps.</li>
+            <li>Built Jenkins and Bitbucket pipelines with automated rollback, replacing manual deployments.</li>
+            <li>Codified AWS and Azure infrastructure in Terraform modules and server setup in Ansible playbooks.</li>
+            <li>Built unified monitoring across both clouds with Prometheus, Grafana, Azure Monitor and CloudWatch.</li>
+            <li>Replaced manual operational tasks and business workflows with Python and Bash automation.</li>
+            <li>Reduced cloud costs by removing unused resources and adding lifecycle policies; enforced RBAC.</li>
+            <li>Sped up production PostgreSQL and SQL Server queries through query plan analysis and indexing.</li>
+          </ul>
+          <div class="tags stack"><span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">Terraform</span><span class="tag">Ansible</span><span class="tag">Jenkins</span><span class="tag">Prometheus</span><span class="tag">PostgreSQL</span></div>
         </div>
-        <p class="note">Promoted three times: Cloud Engineer → DevOps Engineer → DevOps &amp; DBA → DevOps &amp; SRE</p>
-        <ul>
-          <li>Designed and ran highly available AWS and Azure infrastructure for the EdTech platform and customer apps.</li>
-          <li>Built Jenkins and Bitbucket pipelines with automated rollback, replacing manual deployments.</li>
-          <li>Codified AWS and Azure infrastructure in Terraform modules and server setup in Ansible playbooks.</li>
-          <li>Built unified monitoring across both clouds with Prometheus, Grafana, Azure Monitor and CloudWatch.</li>
-          <li>Replaced manual operational tasks and business workflows with Python and Bash automation.</li>
-          <li>Reduced cloud costs by removing unused resources and adding lifecycle policies; enforced RBAC.</li>
-          <li>Sped up production PostgreSQL and SQL Server queries through query plan analysis and indexing.</li>
-        </ul>
       </div>
     </section>
 
     <section id="projects">
-      <h2>Projects</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>CI/CD pipeline for a containerised web app</h3>
-          <p class="sub">MSc module: Continuous Software Deployment, TU Dublin · Oct 2026</p>
-          <ul>
-            <li>GitHub Actions pipeline promoting one Docker image through QA, Staging and Production with approvals.</li>
-            <li>Blue/green deploys on Azure with zero-downtime switching, automated rollback and keyless OIDC auth.</li>
-            <li>Releases gated on Playwright, k6, SonarCloud, Trivy and OWASP ZAP; monitored with Application Insights.</li>
-          </ul>
-          <div class="tags"><span>Python</span><span>Docker</span><span>GitHub Actions</span><span>Azure</span></div>
+      <div class="section-head reveal"><span class="num">02</span><h2>Projects</h2><span class="line"></span></div>
+      <div class="projects">
+        <div class="project featured reveal">
+          <div class="kicker">Featured · Oct 2026</div>
+          <h3>Zero-downtime CI/CD for a containerised web app</h3>
+          <p class="context">MSc module: Continuous Software Deployment, TU Dublin</p>
+          <div class="pipeline">
+            <span class="stage">build</span><span class="arrow">→</span>
+            <span class="stage gate">test + scan</span><span class="arrow">→</span>
+            <span class="stage">QA</span><span class="arrow">→</span>
+            <span class="stage">Staging</span><span class="arrow">→</span>
+            <span class="stage gate">approval</span><span class="arrow">→</span>
+            <span class="stage prod">Production · blue/green</span>
+          </div>
+          <div class="feature-grid">
+            <ul>
+              <li>GitHub Actions pipeline promoting one Docker image through QA, Staging and Production with approvals.</li>
+              <li>Blue/green deploys on Azure with zero-downtime switching, automated rollback and keyless OIDC auth.</li>
+              <li>Releases gated on Playwright, k6, SonarCloud, Trivy and OWASP ZAP; monitored with Application Insights.</li>
+            </ul>
+            <div>
+              <div class="tags"><span class="tag">GitHub Actions</span><span class="tag">Docker</span><span class="tag">Azure</span><span class="tag">Python</span><span class="tag">OIDC</span><span class="tag">Trivy</span><span class="tag">OWASP ZAP</span><span class="tag">SonarCloud</span><span class="tag">k6</span><span class="tag">Playwright</span><span class="tag">App Insights</span></div>
+            </div>
+          </div>
         </div>
-        <div class="card">
+
+        <div class="project reveal">
+          <div class="kicker">Healthcare · Oct 2026</div>
           <h3>CareTrack: hospital equipment tracking</h3>
-          <p class="sub">Transforming Health 2026 Healthcare Innovation Challenge, TU Dublin &amp; Tallaght University Hospital · Oct 2026</p>
+          <p class="context">Transforming Health 2026 Innovation Challenge · TU Dublin and Tallaght University Hospital</p>
           <ul>
             <li>Owned CI/CD and deployment for a team-built, QR-based equipment tracking app (React and Spring Boot).</li>
             <li>Built GitHub Actions pipelines to build, test and deploy the application to Azure.</li>
           </ul>
-          <div class="tags"><span>GitHub Actions</span><span>Docker</span><span>Azure</span></div>
+          <div class="tags"><span class="tag">GitHub Actions</span><span class="tag">Docker</span><span class="tag">Azure</span><span class="tag">React</span><span class="tag">Spring Boot</span></div>
+        </div>
+
+        <div class="project reveal">
+          <div class="kicker">This site</div>
+          <h3>pso25.github.io</h3>
+          <p class="context">The portfolio you're reading</p>
+          <ul>
+            <li>Single-file, dependency-free static site served from GitHub Pages.</li>
+            <li>Responsive, accessible and respects reduced-motion settings.</li>
+          </ul>
+          <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">GitHub Pages</span></div>
         </div>
       </div>
     </section>
 
     <section id="skills">
-      <h2>Skills</h2>
+      <div class="section-head reveal"><span class="num">03</span><h2>Skills</h2><span class="line"></span></div>
       <div class="skills">
-        <div class="card"><h3>Cloud and containers</h3><div class="tags"><span>AWS</span><span>Azure</span><span>Kubernetes</span><span>Docker</span><span>Helm</span></div></div>
-        <div class="card"><h3>IaC and CI/CD</h3><div class="tags"><span>Terraform</span><span>Ansible</span><span>GitHub Actions</span><span>Jenkins</span><span>Argo CD</span><span>Git</span></div></div>
-        <div class="card"><h3>Observability</h3><div class="tags"><span>Prometheus</span><span>Grafana</span><span>Datadog</span><span>Splunk</span><span>CloudWatch</span><span>Azure Monitor</span></div></div>
-        <div class="card"><h3>Scripting</h3><div class="tags"><span>Python</span><span>Bash</span><span>Go</span></div></div>
-        <div class="card"><h3>Databases</h3><div class="tags"><span>PostgreSQL</span><span>SQL Server</span><span>MongoDB</span></div></div>
-        <div class="card"><h3>Networking</h3><div class="tags"><span>Nginx</span><span>Route 53</span><span>CloudFront</span><span>Akamai</span></div></div>
-        <div class="card"><h3>Incident and ops</h3><div class="tags"><span>PagerDuty</span><span>ServiceNow</span><span>Linux</span></div></div>
+        <div class="skill reveal"><h3>cloud &amp; containers</h3><div class="tags"><span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">Kubernetes</span><span class="tag">Docker</span><span class="tag">Helm</span></div></div>
+        <div class="skill reveal"><h3>iac &amp; ci/cd</h3><div class="tags"><span class="tag">Terraform</span><span class="tag">Ansible</span><span class="tag">GitHub Actions</span><span class="tag">Jenkins</span><span class="tag">Argo CD</span><span class="tag">Git</span></div></div>
+        <div class="skill reveal"><h3>observability</h3><div class="tags"><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Datadog</span><span class="tag">Splunk</span><span class="tag">CloudWatch</span><span class="tag">Azure Monitor</span></div></div>
+        <div class="skill reveal"><h3>scripting</h3><div class="tags"><span class="tag">Python</span><span class="tag">Bash</span><span class="tag">Go</span></div></div>
+        <div class="skill reveal"><h3>databases</h3><div class="tags"><span class="tag">PostgreSQL</span><span class="tag">SQL Server</span><span class="tag">MongoDB</span></div></div>
+        <div class="skill reveal"><h3>networking</h3><div class="tags"><span class="tag">Nginx</span><span class="tag">Route 53</span><span class="tag">CloudFront</span><span class="tag">Akamai</span></div></div>
+        <div class="skill reveal"><h3>incident &amp; ops</h3><div class="tags"><span class="tag">PagerDuty</span><span class="tag">ServiceNow</span><span class="tag">Linux</span></div></div>
       </div>
     </section>
 
     <section id="education">
-      <h2>Education</h2>
-      <ul class="list">
-        <li><b>MSc in Computing (DevOps)</b> – Technological University Dublin, Ireland <span>Expected Sep 2027</span></li>
-        <li><b>BTech in Electronics &amp; Communication Engineering</b> – B.S. Abdur Rahman Crescent Institute, India <span>Jul 2021</span></li>
-      </ul>
+      <div class="section-head reveal"><span class="num">04</span><h2>Education and certifications</h2><span class="line"></span></div>
+      <div class="two-col">
+        <div>
+          <div class="item reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></div>
+            <div><h4>MSc in Computing (DevOps)</h4><p>Technological University Dublin, Ireland</p><div class="when">Expected Sep 2027</div></div>
+          </div>
+          <div class="item reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></div>
+            <div><h4>BTech, Electronics &amp; Communication Engineering</h4><p>B.S. Abdur Rahman Crescent Institute, India</p><div class="when">Jul 2021</div></div>
+          </div>
+        </div>
+        <div>
+          <div class="item reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/><path d="m9 12 2 2 4-4"/></svg></div>
+            <div><h4>AWS Certified Solutions Architect – Associate</h4><p>Amazon Web Services · verifiable on Credly</p></div>
+          </div>
+          <div class="item reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 14.5-1.5 7.5 5-3 5 3-1.5-7.5"/></svg></div>
+            <div><h4>Engineering Excellence Award – Best Performance</h4><p>Wall Street English</p><div class="when">2023</div></div>
+          </div>
+          <div class="item reveal">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6.5 7 1-5 5 1.2 7L12 18l-6.2 3.5L7 14.5l-5-5 7-1L12 2z"/></svg></div>
+            <div><h4>Functional Head's Choice – Outstanding Performance</h4><p>Wall Street English</p><div class="when">Q3 2023</div></div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="certifications">
-      <h2>Certifications and awards</h2>
-      <ul class="list">
-        <li><b>AWS Certified Solutions Architect – Associate</b> <span>Verifiable on Credly</span></li>
-        <li><b>Engineering Excellence Award – Best Performance</b> <span>2023</span></li>
-        <li><b>Functional Head's Choice – Outstanding Performance</b> <span>Q3 2023</span></li>
-      </ul>
-    </section>
+    <div class="contact reveal" id="contact">
+      <h2>Let's keep your systems reliable.</h2>
+      <p>Based in Dublin. Available for part-time and internship SRE, DevOps and cloud roles now, and full-time from September 2027.</p>
+      <div class="ctas">
+        <a class="btn primary" href="mailto:praveenps025@gmail.com">praveenps025@gmail.com</a>
+        <a class="btn" href="https://linkedin.com/in/praveen-ps" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/pso25" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
 
-    <footer id="contact">
-      <h2>Contact</h2>
-      <p>Based in Dublin, Ireland. Open to SRE, DevOps and cloud roles: part-time and internships now, full-time from September 2027.</p>
-      <a href="mailto:praveenps025@gmail.com">praveenps025@gmail.com</a>
-      <a href="https://linkedin.com/in/praveen-ps">LinkedIn</a>
-      <a href="https://github.com/pso25">GitHub</a>
+    <footer>
+      <span>© <span id="yr">2026</span> Praveen PS</span>
+      <span>deployed on GitHub Pages · status: <span style="color: var(--green)">operational</span></span>
     </footer>
-  </div>
+  </main>
+
+  <script>
+    document.getElementById("yr").textContent = new Date().getFullYear();
+    var els = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+      }, { threshold: 0.12 });
+      els.forEach(function (el) { io.observe(el); });
+    } else {
+      els.forEach(function (el) { el.classList.add("in"); });
+    }
+  </script>
 </body>
 </html>
