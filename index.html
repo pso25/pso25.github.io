@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Praveen PS · Site Reliability Engineer · DevOps</title>
+  <title>Praveen PS · DevOps + Site Reliability Engineer (SRE)</title>
   <meta name="description" content="Praveen PS: Site Reliability Engineer and DevOps engineer with 4+ years running production systems on AWS, Azure and Kubernetes. Based in Dublin.">
   <meta property="og:title" content="Praveen PS · Site Reliability Engineer · DevOps">
   <meta property="og:description" content="4+ years running production systems on AWS, Azure and Kubernetes. MSc DevOps at TU Dublin.">
@@ -65,6 +65,7 @@
     @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(52,211,153,.55); } 70% { box-shadow: 0 0 0 10px rgba(52,211,153,0); } 100% { box-shadow: 0 0 0 0 rgba(52,211,153,0); } }
     .hero h1 { font-size: clamp(36px, 5.4vw, 58px); line-height: 1.08; letter-spacing: -0.03em; margin: 0 0 18px; font-weight: 700; }
     .hero h1 .accent { color: var(--green); }
+    .hero h1 .role { display: block; font-size: clamp(22px, 2.9vw, 32px); font-weight: 600; letter-spacing: -0.02em; line-height: 1.25; color: var(--muted); margin-top: 10px; }
     .hero .lead { font-size: 18px; color: var(--muted); max-width: 560px; margin: 0 0 28px; }
     .hero .lead strong { color: var(--text); font-weight: 500; }
     .ctas { display: flex; flex-wrap: wrap; gap: 12px; }
@@ -119,6 +120,49 @@
     .job li::before { content: "›"; position: absolute; left: 4px; color: var(--green); font-family: var(--mono); font-weight: 700; }
     .job .stack { margin-top: 16px; }
 
+    .job-intro { color: var(--muted); font-size: 15px; margin: 14px 0 0; }
+    .areas { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+    .area { background: var(--bg-2); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px 6px; }
+    .area h4 { margin: 0; font-family: var(--mono); font-size: 12.5px; font-weight: 500; color: var(--amber); text-transform: uppercase; letter-spacing: .06em; }
+    .area ul { margin-top: 10px; }
+    .area li { font-size: 14px; }
+    .section-lead { color: var(--muted); margin: -12px 0 24px; }
+    .impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .impact { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; transition: border-color .2s; }
+    .impact:hover { border-color: rgba(52,211,153,0.4); }
+    .impact-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+    .impact .what { font-weight: 600; font-size: 15px; }
+    .impact .save { font-family: var(--mono); font-weight: 700; font-size: 22px; color: var(--green); white-space: nowrap; }
+    .impact .change { font-size: 12px; color: var(--dim); margin: 4px 0 14px; }
+    .bar { height: 7px; border-radius: 4px; background: var(--bg-2); overflow: hidden; margin-bottom: 6px; }
+    .bar span { display: block; height: 100%; background: var(--border-2); border-radius: 4px; }
+    .bar.after span { background: var(--green); }
+    .impact .nums { display: flex; justify-content: space-between; font-size: 12.5px; color: var(--muted); margin-top: 8px; }
+    .impact-note { margin: 0; font-size: 14px; color: #c3cdd9; }
+    .cert-badge { display: inline-flex; align-items: center; gap: 12px; margin-top: 22px; padding: 10px 16px 10px 10px; border: 1px solid rgba(251,191,36,0.35); background: rgba(251,191,36,0.07); border-radius: 10px; text-decoration: none; transition: border-color .2s, transform .2s; }
+    .cert-badge:hover { border-color: var(--amber); transform: translateY(-1px); text-decoration: none; }
+    .cert-icon { width: 36px; height: 36px; border-radius: 8px; display: grid; place-items: center; background: rgba(251,191,36,0.15); color: var(--amber); flex-shrink: 0; }
+    .cert-icon svg { width: 20px; height: 20px; }
+    .cert-text { display: flex; flex-direction: column; line-height: 1.35; }
+    .cert-text b { font-size: 14px; font-weight: 600; color: var(--text); }
+    .cert-text small { font-family: var(--mono); font-size: 11.5px; color: var(--amber); }
+    .email-menu { position: relative; display: inline-block; }
+    .email-toggle { cursor: pointer; font-family: inherit; }
+    .email-toggle .chev { width: 14px; height: 14px; transition: transform .2s; }
+    .email-toggle[aria-expanded="true"] .chev { transform: rotate(180deg); }
+    .menu { position: absolute; top: calc(100% + 8px); left: 0; z-index: 30; min-width: 230px; background: var(--card); border: 1px solid var(--border-2); border-radius: 10px; padding: 6px; box-shadow: 0 16px 40px rgba(0,0,0,.55); text-align: left; }
+    .menu[hidden] { display: none; }
+    .menu a, .menu button { display: block; width: 100%; padding: 10px 12px; border-radius: 6px; color: var(--text); text-decoration: none; font: inherit; font-size: 14px; background: none; border: none; text-align: left; cursor: pointer; }
+    .menu a:hover, .menu button:hover, .menu a:focus-visible, .menu button:focus-visible { background: var(--card-hover); color: var(--green); outline: none; }
+    .credly-link { text-decoration: none; }
+    .credly-link:hover { color: var(--green); text-decoration: underline; }
+    .item p .credly-link { color: var(--green); }
+    .impact.wide { grid-column: 1 / -1; border-color: rgba(52,211,153,0.3); }
+    .wide-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 28px; align-items: center; }
+    .org-tag { font-size: 11.5px; color: var(--amber); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px; }
+    .wide .what { font-size: 17px; }
+    .wide .save { font-size: 28px; }
+    .impact-note b { color: var(--text); font-weight: 600; }
     .tags { display: flex; flex-wrap: wrap; gap: 7px; }
     .tag { font-family: var(--mono); font-size: 12px; color: var(--blue); background: var(--blue-bg); border: 1px solid rgba(96,165,250,0.18); padding: 3px 10px; border-radius: 6px; }
 
@@ -159,6 +203,9 @@
 
     footer { padding: 36px 0 48px; color: var(--dim); font-family: var(--mono); font-size: 12.5px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
 
+    .toast { position: fixed; left: 50%; bottom: 28px; transform: translate(-50%, 20px); opacity: 0; pointer-events: none; background: var(--card); border: 1px solid rgba(52,211,153,0.4); color: var(--text); font-size: 14px; padding: 12px 18px; border-radius: 10px; box-shadow: 0 12px 30px rgba(0,0,0,.5); transition: all .25s ease; z-index: 50; max-width: 90vw; text-align: center; }
+    .toast.show { opacity: 1; transform: translate(-50%, 0); }
+    .toast b { color: var(--green); font-weight: 500; }
     .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
     .reveal.in { opacity: 1; transform: none; }
     @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } .dot, .cursor { animation: none; } html { scroll-behavior: auto; } }
@@ -168,7 +215,9 @@
       .metrics { grid-template-columns: 1fr 1fr; }
       .metric:nth-child(2) { border-right: none; }
       .metric:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
-      .projects, .feature-grid, .two-col { grid-template-columns: 1fr; }
+      .projects, .feature-grid, .two-col, .areas { grid-template-columns: 1fr; }
+      .impact-grid { grid-template-columns: 1fr 1fr; }
+      .wide-grid { grid-template-columns: 1fr; gap: 16px; }
       .nav-links { display: none; }
       .contact { padding: 34px 22px; }
     }
@@ -178,6 +227,7 @@
       .metric:last-child { border-bottom: none; }
       .job, .project { padding: 20px; }
       .term-body .k { min-width: 92px; }
+      .impact-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -187,6 +237,7 @@
       <a class="logo" href="#top"><span>~/</span>praveen-ps</a>
       <div class="nav-links">
         <a href="#experience">Experience</a>
+        <a href="#impact">Impact</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
         <a href="#education">Education</a>
@@ -199,13 +250,22 @@
     <div class="hero">
       <div>
         <div class="status-pill"><span class="dot"></span>Open to part-time and internship roles · Dublin</div>
-        <h1>Praveen PS.<br>I keep production <span class="accent">up</span>.</h1>
-        <p class="lead">Site Reliability Engineer with <strong>4+ years</strong> running production systems on <strong>AWS, Azure and Kubernetes</strong>, most recently on-call for <strong>Walmart's e-commerce platform</strong>. Now doing an MSc in DevOps at TU Dublin.</p>
+        <h1>Praveen PS<span class="role">DevOps + Site Reliability <span style="white-space:nowrap">Engineer <span class="accent">(SRE)</span></span></span></h1>
+        <p class="lead"><strong>4+ years</strong> building, automating and running production on <strong>AWS, Azure and Kubernetes</strong>, most recently at <strong>Walmart</strong>. I ship reliable CI/CD, cut alert noise and lower cloud bills.</p>
         <div class="ctas">
-          <a class="btn primary" href="mailto:praveenps025@gmail.com">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-            Get in touch
-          </a>
+          <div class="email-menu">
+            <button class="btn primary email-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              praveenps025@gmail.com
+              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="menu" role="menu" hidden>
+              <a role="menuitem" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=praveenps025@gmail.com" target="_blank" rel="noopener">Open in Gmail</a>
+              <a role="menuitem" href="https://outlook.live.com/mail/0/deeplink/compose?to=praveenps025@gmail.com" target="_blank" rel="noopener">Open in Outlook</a>
+              <a role="menuitem" href="mailto:praveenps025@gmail.com">Open my mail app</a>
+              <button role="menuitem" type="button" class="copy-email">Copy email address</button>
+            </div>
+          </div>
           <a class="btn" href="https://linkedin.com/in/praveen-ps" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
             LinkedIn
@@ -215,17 +275,21 @@
             GitHub
           </a>
         </div>
+        <a class="cert-badge credly-link" href="#" target="_blank" rel="noopener">
+          <span class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <span class="cert-text"><b>AWS Certified Solutions Architect – Associate</b><small>Verified on Credly ↗</small></span>
+        </a>
       </div>
 
       <div class="terminal" aria-label="Profile summary in a terminal">
         <div class="term-bar"><i></i><i></i><i></i><span>praveen@prod: ~</span></div>
         <div class="term-body">
           <div><span class="p">$</span> <span class="c">kubectl describe engineer praveen-ps</span></div>
-          <div><span class="k">Role:</span><span class="v">SRE / DevOps</span></div>
+          <div><span class="k">Role:</span><span class="v">DevOps + SRE</span></div>
           <div><span class="k">Experience:</span><span class="v">4+ years</span></div>
           <div><span class="k">Clouds:</span><span class="v">AWS, Azure</span></div>
           <div><span class="k">On-call:</span><span class="v">24×7 production</span></div>
-          <div><span class="k">Certified:</span><span class="v">AWS SA Associate</span></div>
+          <div><span class="k">Certified:</span><a class="v credly-link" href="#" target="_blank" rel="noopener">AWS SA Associate ↗</a></div>
           <div><span class="k">Studying:</span><span class="v">MSc DevOps, TU Dublin</span></div>
           <div><span class="k">Status:</span><span class="ok">● Ready</span></div>
           <div><span class="p">$</span> <span class="cursor"></span></div>
@@ -235,9 +299,9 @@
 
     <div class="metrics reveal">
       <div class="metric"><div class="label">Experience</div><div class="value">4+ yrs</div><div class="sub">DevOps and SRE</div></div>
-      <div class="metric"><div class="label">On-call</div><div class="value">24×7</div><div class="sub">Walmart Global Tech</div></div>
-      <div class="metric"><div class="label">Cloud</div><div class="value">AWS + Azure</div><div class="sub">multi-cloud production</div></div>
-      <div class="metric"><div class="label">Certified</div><div class="value">AWS SAA</div><div class="sub">Solutions Architect</div></div>
+      <div class="metric"><div class="label">Alert noise</div><div class="value">−60–70%</div><div class="sub">e-commerce on-call, Walmart</div></div>
+      <div class="metric"><div class="label">Monitoring</div><div class="value">50+ sites</div><div class="sub">checked every 30 s, self-hosted</div></div>
+      <div class="metric"><div class="label">Cost</div><div class="value">up to −59%</div><div class="sub">by rightsizing AWS and Azure</div></div>
     </div>
 
     <section id="experience">
@@ -249,14 +313,15 @@
             <div class="date">Sep 2024 – Jul 2026</div>
           </div>
           <ul>
-            <li>Operated customer-facing e-commerce services on Kubernetes (Walmart's WCNP) and SaaS apps on Azure.</li>
-            <li>Handled 24×7 on-call, triaging production incidents and working major incidents through to resolution.</li>
-            <li>Debugged production Kubernetes workloads with kubectl: crash-looping pods, failed rollouts and resource limits.</li>
-            <li>Reworked Grafana alerting into metric-based rules, reducing noisy pages and speeding up on-call response.</li>
-            <li>Centralised application logs in OpenObserve, giving on-call one place to search and correlate logs.</li>
-            <li>Diagnosed latency and performance bottlenecks across distributed services from metrics and logs.</li>
+            <li>Kept Walmart's cloud-native e-commerce platform reliable on Kubernetes (Walmart's WCNP) across multi-cloud environments, plus SaaS apps on Azure.</li>
+            <li>Handled 24×7 on-call and led major incidents through to resolution, running root cause analysis with engineering teams to prevent repeats.</li>
+            <li>Ran capacity planning and stress tests on Kubernetes clusters with performance engineering, so the platform could handle Black Friday and Christmas peaks.</li>
+            <li>Restructured and tuned alerting for the e-commerce applications, moving Grafana to metric-based rules. This cut alert noise by 60–70%, removed most false alarms and sped up on-call response.</li>
+            <li>Built custom Python alerting that sends critical notifications to Slack for real-time detection.</li>
+            <li>Centralised application logs in OpenObserve and used Grafana, Prometheus and Splunk to find latency bottlenecks across distributed services.</li>
+            <li>Debugged production workloads with kubectl (crash-looping pods, failed rollouts, resource limits) and supported the move from monolith to microservices.</li>
           </ul>
-          <div class="tags stack"><span class="tag">Kubernetes</span><span class="tag">Azure</span><span class="tag">Grafana</span><span class="tag">OpenObserve</span><span class="tag">Incident response</span></div>
+          <div class="tags stack"><span class="tag">Kubernetes</span><span class="tag">Azure</span><span class="tag">Grafana</span><span class="tag">Prometheus</span><span class="tag">Splunk</span><span class="tag">OpenObserve</span><span class="tag">Python</span><span class="tag">Incident response</span></div>
         </div>
 
         <div class="job reveal">
@@ -265,22 +330,114 @@
             <div class="date">Sep 2021 – Aug 2024</div>
           </div>
           <div class="path"><b>Cloud Engineer</b> → <b>DevOps Engineer</b> → <b>DevOps &amp; DBA</b> → <b>DevOps &amp; SRE</b></div>
-          <ul>
-            <li>Designed and ran highly available AWS and Azure infrastructure for the EdTech platform and customer apps.</li>
-            <li>Built Jenkins and Bitbucket pipelines with automated rollback, replacing manual deployments.</li>
-            <li>Codified AWS and Azure infrastructure in Terraform modules and server setup in Ansible playbooks.</li>
-            <li>Built unified monitoring across both clouds with Prometheus, Grafana, Azure Monitor and CloudWatch.</li>
-            <li>Replaced manual operational tasks and business workflows with Python and Bash automation.</li>
-            <li>Reduced cloud costs by removing unused resources and adding lifecycle policies; enforced RBAC.</li>
-            <li>Sped up production PostgreSQL and SQL Server queries through query plan analysis and indexing.</li>
-          </ul>
-          <div class="tags stack"><span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">Terraform</span><span class="tag">Ansible</span><span class="tag">Jenkins</span><span class="tag">Prometheus</span><span class="tag">PostgreSQL</span></div>
+          <p class="job-intro">Ran a highly available AWS and Azure platform for a global EdTech business, across four areas:</p>
+          <div class="areas">
+            <div class="area">
+              <h4>SRE and monitoring</h4>
+              <ul>
+                <li>Replaced paid Datadog Synthetics (5-minute checks) with a self-hosted Prometheus, Blackbox Exporter and Grafana stack that checks 50+ sites every 30 seconds: status codes, response time, latency, error rate and SSL expiry alerts. That's 10× faster detection. It removed the Datadog Synthetics bill and avoided ~$2,160/month that 30-second checks would cost on Datadog at list price.</li>
+                <li>Brought Azure Monitor and CloudWatch into one Grafana view across both clouds.</li>
+                <li>Set up 24×7 PagerDuty alerting for Azure web apps, VMs and SQL, and led post-incident reviews.</li>
+              </ul>
+            </div>
+            <div class="area">
+              <h4>Cloud infrastructure</h4>
+              <ul>
+                <li>Ran a D2C website on AWS with EC2, RDS, load balancing, Auto Scaling and CloudFront.</li>
+                <li>Moved static content from containers to S3 and CloudFront, making pages faster and cheaper to host.</li>
+                <li>Helped app teams move legacy apps from VMs to containers and microservices.</li>
+              </ul>
+            </div>
+            <div class="area">
+              <h4>CI/CD and automation</h4>
+              <ul>
+                <li>Migrated CI/CD from self-hosted Jenkins to Bitbucket Pipelines. This removed the work of patching and maintaining the Jenkins server, so the team no longer spent time running CI infrastructure.</li>
+                <li>Built pipelines with automated rollback for monolith and microservice releases.</li>
+                <li>Provisioned with Terraform, configured with Ansible, and automated SSL renewal with Let's Encrypt and Certbot.</li>
+                <li>Wrote Python to automate DNS subdomain updates and other repetitive ops tasks.</li>
+              </ul>
+            </div>
+            <div class="area">
+              <h4>Databases and data</h4>
+              <ul>
+                <li>Automated database operations across 30 databases: user creation, updates, deletion and role changes, plus access audits and backup/restore. This cut manual effort by 80% and freed the team from repetitive work.</li>
+                <li>Administered SQL Server and PostgreSQL: replicas, index tuning and query plan reviews.</li>
+                <li>Migrated data with Azure Data Factory, Databricks and AWS Glue (Azure SQL → PostgreSQL, MongoDB).</li>
+                <li>Set up Azure SQL auditing, dynamic data masking and archiving of old data to storage.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="tags stack"><span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">Terraform</span><span class="tag">Ansible</span><span class="tag">Jenkins</span><span class="tag">Bitbucket Pipelines</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">PagerDuty</span><span class="tag">PostgreSQL</span><span class="tag">SQL Server</span><span class="tag">Azure Data Factory</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="impact">
+      <div class="section-head reveal"><span class="num">02</span><h2>Impact</h2><span class="line"></span></div>
+      <p class="section-lead reveal">Measured results from Walmart and Wall Street English: less noise, faster detection and lower cloud bills.</p>
+      <div class="impact-grid">
+        <div class="impact wide reveal">
+          <div class="wide-grid">
+            <div>
+              <div class="org-tag mono">Walmart Global Tech</div>
+              <div class="impact-top"><span class="what">Alert noise on e-commerce applications</span><span class="save">−60–70%</span></div>
+              <div class="change mono">restructured and tuned alerts → metric-based Grafana rules</div>
+              <p class="impact-note">On-call got far fewer false alarms, so the pages that remained were real and acted on faster.</p>
+            </div>
+            <div class="wide-bars">
+              <div class="bar"><span style="width:100%"></span></div><div class="bar after"><span style="width:35%"></span></div>
+              <div class="nums mono"><span>noisy alerts before</span><span>→ 60–70% fewer</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="impact reveal">
+          <div class="org-tag mono">Wall Street English</div>
+          <div class="impact-top"><span class="what">Synthetic monitoring</span><span class="save">10× faster</span></div>
+          <div class="change mono">Datadog every 5 min → self-hosted every 30 s</div>
+          <div class="bar"><span style="width:100%"></span></div><div class="bar after"><span style="width:10%"></span></div>
+          <div class="nums mono"><span>5 min to detect</span><span>→ 30 s</span></div>
+          <p class="impact-note" style="margin-top:12px"><b>Saved:</b> the Datadog Synthetics bill for 5-minute checks (~$216/month at list price).<br><b>Avoided:</b> ~$2,160/month that 30-second checks would cost on Datadog. The self-hosted stack has no per-check fees.</p>
+        </div>
+        <div class="impact reveal">
+          <div class="org-tag mono">Wall Street English</div>
+          <div class="impact-top"><span class="what">Database automation (30 DBs)</span><span class="save">−80%</span></div>
+          <div class="change mono">manual DB admin effort → automated</div>
+          <div class="bar"><span style="width:100%"></span></div><div class="bar after"><span style="width:20%"></span></div>
+          <div class="nums mono"><span>manual effort</span><span>→ 80% less</span></div>
+          <p class="impact-note" style="margin-top:12px">Automated user creation, updates, deletion and role changes, plus access audits and backup/restore, across 30 databases. The team stopped doing repetitive tickets and moved to higher-value work.</p>
+        </div>
+        <div class="impact reveal">
+          <div class="org-tag mono">Wall Street English</div>
+          <div class="impact-top"><span class="what">Production Azure SQL database</span><span class="save">−43%</span></div>
+          <div class="change mono">P6 → P4 tier, after DB maintenance</div>
+          <div class="bar"><span style="width:100%"></span></div><div class="bar after"><span style="width:56.8%"></span></div>
+          <div class="nums mono"><span>$3,377</span><span>→ $1,917</span></div>
+        </div>
+        <div class="impact reveal">
+          <div class="org-tag mono">Wall Street English</div>
+          <div class="impact-top"><span class="what">Azure VMs (×2)</span><span class="save">−50%</span></div>
+          <div class="change mono">DS3v2 → DS2v2, after usage analysis</div>
+          <div class="bar"><span style="width:100%"></span></div><div class="bar after"><span style="width:50.2%"></span></div>
+          <div class="nums mono"><span>$173 each</span><span>→ $87 each</span></div>
+        </div>
+        <div class="impact reveal">
+          <div class="org-tag mono">Wall Street English</div>
+          <div class="impact-top"><span class="what">AWS EC2 instances (×2)</span><span class="save">−59%</span></div>
+          <div class="change mono">t2.large → t2.medium, plus one shut down</div>
+          <div class="bar"><span style="width:100%"></span></div><div class="bar after"><span style="width:41.3%"></span></div>
+          <div class="nums mono"><span>$75 each</span><span>→ $31 each</span></div>
+        </div>
+        <div class="impact reveal">
+          <div class="org-tag mono">Wall Street English</div>
+          <div class="impact-top"><span class="what">Staging databases</span><span class="save">$75/wk</span></div>
+          <div class="change mono">scripted shutdown nights and weekends</div>
+          <p class="impact-note">A pipeline script stops unused staging DBs out of hours. Scheduled scale-up and scale-down also runs on secondary DBs.</p>
         </div>
       </div>
     </section>
 
     <section id="projects">
-      <div class="section-head reveal"><span class="num">02</span><h2>Projects</h2><span class="line"></span></div>
+      <div class="section-head reveal"><span class="num">03</span><h2>Projects</h2><span class="line"></span></div>
       <div class="projects">
         <div class="project featured reveal">
           <div class="kicker">Featured · Oct 2026</div>
@@ -331,20 +488,20 @@
     </section>
 
     <section id="skills">
-      <div class="section-head reveal"><span class="num">03</span><h2>Skills</h2><span class="line"></span></div>
+      <div class="section-head reveal"><span class="num">04</span><h2>Skills</h2><span class="line"></span></div>
       <div class="skills">
         <div class="skill reveal"><h3>cloud &amp; containers</h3><div class="tags"><span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">Kubernetes</span><span class="tag">Docker</span><span class="tag">Helm</span></div></div>
         <div class="skill reveal"><h3>iac &amp; ci/cd</h3><div class="tags"><span class="tag">Terraform</span><span class="tag">Ansible</span><span class="tag">GitHub Actions</span><span class="tag">Jenkins</span><span class="tag">Argo CD</span><span class="tag">Git</span></div></div>
         <div class="skill reveal"><h3>observability</h3><div class="tags"><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">Datadog</span><span class="tag">Splunk</span><span class="tag">CloudWatch</span><span class="tag">Azure Monitor</span></div></div>
         <div class="skill reveal"><h3>scripting</h3><div class="tags"><span class="tag">Python</span><span class="tag">Bash</span><span class="tag">Go</span></div></div>
-        <div class="skill reveal"><h3>databases</h3><div class="tags"><span class="tag">PostgreSQL</span><span class="tag">SQL Server</span><span class="tag">MongoDB</span></div></div>
-        <div class="skill reveal"><h3>networking</h3><div class="tags"><span class="tag">Nginx</span><span class="tag">Route 53</span><span class="tag">CloudFront</span><span class="tag">Akamai</span></div></div>
-        <div class="skill reveal"><h3>incident &amp; ops</h3><div class="tags"><span class="tag">PagerDuty</span><span class="tag">ServiceNow</span><span class="tag">Linux</span></div></div>
+        <div class="skill reveal"><h3>databases &amp; data</h3><div class="tags"><span class="tag">PostgreSQL</span><span class="tag">SQL Server</span><span class="tag">Azure SQL</span><span class="tag">MongoDB</span><span class="tag">Redis</span><span class="tag">Azure Data Factory</span><span class="tag">Databricks</span><span class="tag">AWS Glue</span></div></div>
+        <div class="skill reveal"><h3>networking &amp; security</h3><div class="tags"><span class="tag">Nginx</span><span class="tag">Apache</span><span class="tag">Route 53</span><span class="tag">CloudFront</span><span class="tag">Akamai</span><span class="tag">Azure Front Door</span><span class="tag">Let's Encrypt</span><span class="tag">RBAC</span></div></div>
+        <div class="skill reveal"><h3>incident &amp; ops</h3><div class="tags"><span class="tag">PagerDuty</span><span class="tag">xMatters</span><span class="tag">ServiceNow</span><span class="tag">Linux</span><span class="tag">Windows Server</span><span class="tag">JMeter</span><span class="tag">Jira</span></div></div>
       </div>
     </section>
 
     <section id="education">
-      <div class="section-head reveal"><span class="num">04</span><h2>Education and certifications</h2><span class="line"></span></div>
+      <div class="section-head reveal"><span class="num">05</span><h2>Education and certifications</h2><span class="line"></span></div>
       <div class="two-col">
         <div>
           <div class="item reveal">
@@ -359,7 +516,7 @@
         <div>
           <div class="item reveal">
             <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V6l-8-4z"/><path d="m9 12 2 2 4-4"/></svg></div>
-            <div><h4>AWS Certified Solutions Architect – Associate</h4><p>Amazon Web Services · verifiable on Credly</p></div>
+            <div><h4><a class="credly-link" href="#" target="_blank" rel="noopener">AWS Certified Solutions Architect – Associate</a></h4><p>Amazon Web Services · <a class="credly-link" href="#" target="_blank" rel="noopener">verify on Credly ↗</a></p></div>
           </div>
           <div class="item reveal">
             <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 14.5-1.5 7.5 5-3 5 3-1.5-7.5"/></svg></div>
@@ -377,7 +534,19 @@
       <h2>Let's keep your systems reliable.</h2>
       <p>Based in Dublin. Available for part-time and internship SRE, DevOps and cloud roles now, and full-time from September 2027.</p>
       <div class="ctas">
-        <a class="btn primary" href="mailto:praveenps025@gmail.com">praveenps025@gmail.com</a>
+        <div class="email-menu">
+            <button class="btn primary email-toggle" type="button" aria-haspopup="true" aria-expanded="false">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              praveenps025@gmail.com
+              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="menu" role="menu" hidden>
+              <a role="menuitem" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=praveenps025@gmail.com" target="_blank" rel="noopener">Open in Gmail</a>
+              <a role="menuitem" href="https://outlook.live.com/mail/0/deeplink/compose?to=praveenps025@gmail.com" target="_blank" rel="noopener">Open in Outlook</a>
+              <a role="menuitem" href="mailto:praveenps025@gmail.com">Open my mail app</a>
+              <button role="menuitem" type="button" class="copy-email">Copy email address</button>
+            </div>
+          </div>
         <a class="btn" href="https://linkedin.com/in/praveen-ps" target="_blank" rel="noopener">LinkedIn</a>
         <a class="btn" href="https://github.com/pso25" target="_blank" rel="noopener">GitHub</a>
       </div>
@@ -389,7 +558,57 @@
     </footer>
   </main>
 
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
   <script>
+    var EMAIL = "praveenps025@gmail.com";
+    var toast = document.getElementById("toast"), toastTimer;
+    function showToast(html) {
+      toast.innerHTML = html; toast.classList.add("show");
+      clearTimeout(toastTimer); toastTimer = setTimeout(function () { toast.classList.remove("show"); }, 3500);
+    }
+    function fallbackCopy(text) {
+      var ta = document.createElement("textarea"); ta.value = text; ta.setAttribute("readonly", "");
+      ta.style.position = "absolute"; ta.style.left = "-9999px"; document.body.appendChild(ta); ta.select();
+      var ok = false; try { ok = document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta); return ok;
+    }
+    function copyEmail() {
+      var done = function () { showToast("<b>Email copied:</b> " + EMAIL); };
+      var fail = function () { showToast("Email: <b>" + EMAIL + "</b>"); };
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(EMAIL).then(done, function () { fallbackCopy(EMAIL) ? done() : fail(); });
+      } else { fallbackCopy(EMAIL) ? done() : fail(); }
+    }
+    function closeMenus(except) {
+      document.querySelectorAll(".email-menu").forEach(function (m) {
+        if (m === except) return;
+        m.querySelector(".menu").hidden = true;
+        m.querySelector(".email-toggle").setAttribute("aria-expanded", "false");
+      });
+    }
+    document.querySelectorAll(".email-menu").forEach(function (m) {
+      var btn = m.querySelector(".email-toggle"), menu = m.querySelector(".menu");
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var open = menu.hidden;
+        closeMenus(m);
+        menu.hidden = !open;
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+      });
+      menu.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { closeMenus(); }); });
+      menu.querySelector(".copy-email").addEventListener("click", function () { copyEmail(); closeMenus(); });
+    });
+    document.addEventListener("click", function (e) { if (!e.target.closest(".email-menu")) closeMenus(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeMenus(); });
+
+    // Paste your Credly badge link between the quotes below.
+    var CREDLY_URL = "https://www.credly.com/badges/9fcb16f2-63ca-4111-a3db-8662bc647510/public_url";
+    document.querySelectorAll(".credly-link").forEach(function (a) {
+      if (CREDLY_URL) { a.href = CREDLY_URL; }
+      else { a.removeAttribute("href"); a.removeAttribute("target"); if (a.textContent.indexOf("verify") === 0) a.textContent = "verifiable on Credly"; }
+    });
+
     document.getElementById("yr").textContent = new Date().getFullYear();
     var els = document.querySelectorAll(".reveal");
     if ("IntersectionObserver" in window) {
