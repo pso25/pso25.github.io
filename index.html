@@ -183,6 +183,12 @@
     .project li::before { content: "›"; position: absolute; left: 4px; color: var(--green); font-family: var(--mono); font-weight: 700; }
     .feature-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 28px; }
 
+    .proj-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 0 0 20px; }
+    .proj-stats div { background: var(--bg-2); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; }
+    .proj-stats b { display: block; font-family: var(--mono); color: var(--green); font-size: 18px; }
+    .proj-stats span { font-size: 12px; color: var(--muted); }
+    .proj-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .proj-links .btn { padding: 8px 14px; font-size: 13px; }
     .skills { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
     .skill { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; }
     .skill h3 { margin: 0 0 12px; font-family: var(--mono); font-size: 13px; color: var(--muted); font-weight: 500; }
@@ -217,6 +223,7 @@
       .metric:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
       .projects, .feature-grid, .two-col, .areas { grid-template-columns: 1fr; }
       .impact-grid { grid-template-columns: 1fr 1fr; }
+      .proj-stats { grid-template-columns: 1fr 1fr; }
       .wide-grid { grid-template-columns: 1fr; gap: 16px; }
       .nav-links { display: none; }
       .contact { padding: 34px 22px; }
@@ -441,24 +448,34 @@
       <div class="projects">
         <div class="project featured reveal">
           <div class="kicker">Featured · Oct 2026</div>
-          <h3>Zero-downtime CI/CD for a containerised web app</h3>
-          <p class="context">MSc module: Continuous Software Deployment, TU Dublin</p>
+          <h3>CI/CD pipeline with automatic rollback: BP Calculator</h3>
+          <p class="context">MSc module: Continuous Software Deployment, TU Dublin · 28 pull requests through the pipeline</p>
           <div class="pipeline">
-            <span class="stage">build</span><span class="arrow">→</span>
-            <span class="stage gate">test + scan</span><span class="arrow">→</span>
-            <span class="stage">QA</span><span class="arrow">→</span>
-            <span class="stage">Staging</span><span class="arrow">→</span>
+            <span class="stage">PR</span><span class="arrow">→</span>
+            <span class="stage gate">5 CI checks</span><span class="arrow">→</span>
+            <span class="stage">test</span><span class="arrow">→</span>
+            <span class="stage gate">stage: E2E · k6 · ZAP</span><span class="arrow">→</span>
             <span class="stage gate">approval</span><span class="arrow">→</span>
-            <span class="stage prod">Production · blue/green</span>
+            <span class="stage prod">production · blue/green</span>
+          </div>
+          <div class="proj-stats">
+            <div><b>96%</b><span>test coverage</span></div>
+            <div><b>110 ms</b><span>p95 under load</span></div>
+            <div><b>0</b><span>ZAP high/med/low</span></div>
+            <div><b>auto</b><span>rollback, tested</span></div>
           </div>
           <div class="feature-grid">
             <ul>
-              <li>GitHub Actions pipeline promoting one Docker image through QA, Staging and Production with approvals.</li>
-              <li>Blue/green deploys on Azure with zero-downtime switching, automated rollback and keyless OIDC auth.</li>
-              <li>Releases gated on Playwright, k6, SonarCloud, Trivy and OWASP ZAP; monitored with Application Insights.</li>
+              <li>GitHub Actions pipeline: every PR runs unit and BDD tests, Ruff, Bandit, pip-audit, Hadolint and Trivy; one Docker image is then promoted test → stage → production on Azure App Service.</li>
+              <li>Stage runs Playwright E2E, k6 load tests and an OWASP ZAP scan; results go to Slack for approval before production.</li>
+              <li>Blue/green deploys with slot swaps and keyless OIDC login. A telemetry check in Application Insights rolls back automatically, proven with a deliberately faulty release.</li>
+              <li>Disaster recovery: Terraform builds a copy of the site in a second Azure region on demand.</li>
             </ul>
             <div>
-              <div class="tags"><span class="tag">GitHub Actions</span><span class="tag">Docker</span><span class="tag">Azure</span><span class="tag">Python</span><span class="tag">OIDC</span><span class="tag">Trivy</span><span class="tag">OWASP ZAP</span><span class="tag">SonarCloud</span><span class="tag">k6</span><span class="tag">Playwright</span><span class="tag">App Insights</span></div>
+              <div class="tags"><span class="tag">GitHub Actions</span><span class="tag">Docker</span><span class="tag">Azure App Service</span><span class="tag">Python</span><span class="tag">pytest</span><span class="tag">OIDC</span><span class="tag">Trivy</span><span class="tag">OWASP ZAP</span><span class="tag">k6</span><span class="tag">Playwright</span><span class="tag">OpenTelemetry</span><span class="tag">App Insights</span><span class="tag">Terraform</span><span class="tag">Slack</span></div>
+              <div class="proj-links">
+                <a class="btn primary" href="https://github.com/pso25/SoftwareDelivery_bp_ca1" target="_blank" rel="noopener">View code →</a>
+              </div>
             </div>
           </div>
         </div>
